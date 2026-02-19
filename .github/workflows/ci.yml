@@ -18,11 +18,16 @@ jobs:
 
       - name: Install dependencies
         run: |
+          source /opt/ros/jazzy/setup.bash
           rosdep update
           rosdep install --from-paths src --ignore-src -r -y
 
       - name: Build
-        run: colcon build --base-paths src
+        run: |
+          source /opt/ros/jazzy/setup.bash
+          colcon build --base-paths src
 
       - name: Test
-        run: colcon test --base-paths src
+        run: |
+          source /opt/ros/jazzy/setup.bash
+          colcon test --base-paths src
