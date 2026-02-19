@@ -1,6 +1,88 @@
+############################
+# ROS2 / colcon
+############################
 build/
 install/
 log/
-.vscode/
+.colcon/
+.colcon_install_layout
+
+############################
+# Python
+############################
 __pycache__/
-*.pyc
+*.py[cod]
+*.pyo
+*.pyd
+*.egg
+*.egg-info/
+.eggs/
+.env
+.venv
+venv/
+pip-wheel-metadata/
+
+############################
+# CMake / C++
+############################
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+Makefile
+compile_commands.json
+*.so
+*.a
+*.o
+*.obj
+*.out
+
+############################
+# Testing / Coverage
+############################
+coverage/
+.coverage
+lcov.info
+test_results/
+
+############################
+# Logs / Runtime Data
+############################
+*.log
+*.bag
+*.db3
+*.sqlite3
+
+############################
+# Gazebo / Simulation (generic)
+############################
+*.world~
+*.model~
+gazebo-*
+
+############################
+# IDE / Editors
+############################
+.vscode/
+.idea/
+*.swp
+*.swo
+*.swn
+
+############################
+# OS
+############################
+.DS_Store
+Thumbs.db
+
+############################
+# Docker
+############################
+docker-compose.override.yml
+.env.local
+
+############################
+# Misc
+############################
+*.bak
+*.tmp
+*.orig
