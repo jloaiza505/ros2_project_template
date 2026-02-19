@@ -1,0 +1,21 @@
+name: ROS2 CI
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v4
+      - name: Setup ROS
+        uses: ros-tooling/setup-ros@v0.6
+        with:
+          required-ros-distributions: jazzy
+      - name: Install dependencies
+        run: rosdep update && rosdep install --from-paths src --ignore-src -r -y
+      - name: Build
+        run: colcon build --base-paths src
+      - name: Test
+        run: colcon test --base-paths src
